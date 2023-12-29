@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "target": "ESNext",
+    "module": "ESNext",
+    "useDefineForClassFields": true,
+    "moduleResolution": "Node",
+    "strict": true,
+    "jsx": "preserve",
+    "sourceMap": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "esModuleInterop": true,
+    "verbatimModuleSyntax": true,
+    "lib": ["ESNext", "DOM"],
+    "skipLibCheck": true,
+    "types": ["vite/client", "vitest/globals", "node"],
+    "allowJs": false,
+    "paths": {
+      "~/*": ["./src/*"]
+    }
+  },
+  "references": [{ "path": "./tsconfig.node.json" }, { "path": "./tsconfig.vitest.json" }],
+  "exclude": ["dist", "node_modules", "cypress", "src/vite-env.d.ts"]
+}
