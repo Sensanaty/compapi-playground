@@ -14,12 +14,12 @@
     "verbatimModuleSyntax": true,
     "lib": ["ESNext", "DOM"],
     "skipLibCheck": true,
-    "types": ["vite/client", "vitest/globals", "node"],
+    "types": ["vite/client", "vitest/globals", "node", "jsdom"],
     "allowJs": false,
     "paths": {
       "~/*": ["./src/*"]
     }
   },
-  "references": [{ "path": "./tsconfig.node.json" }, { "path": "./tsconfig.vitest.json" }],
+  "references": [{ "path": "./tsconfig.node.json" }],
   "exclude": ["dist", "node_modules", "cypress", "src/vite-env.d.ts"]
 }
