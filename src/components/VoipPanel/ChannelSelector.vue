@@ -1,7 +1,8 @@
 <template>
   <button
-    class="flex w-full items-center truncate bg-emerald-500 px-4 py-1 font-bold text-black transition-colors hover:bg-emerald-600 active:bg-emerald-500"
+    class="flex w-full items-center truncate bg-emerald-500 px-4 py-1 font-bold text-black transition-colors hover:bg-emerald-600 active:bg-emerald-500 disabled:cursor-not-allowed disabled:bg-emerald-900"
     :class="{ '!bg-emerald-700': isDropdownOpen }"
+    :disabled="isCalling"
     @click.prevent="isDropdownOpen = !isDropdownOpen"
   >
     <span class="mx-auto truncate">{{ activeChannel.number }} ({{ activeChannel.name }})</span>
@@ -26,10 +27,14 @@ import { ref } from "vue";
 import { storeToRefs } from "pinia";
 
 import useChannelStore, { type Channel } from "~/store/useChannelStore";
+import useCallStore from "~/store/useCallStore";
 
 const channelStore = useChannelStore();
 const { activeChannel, allChannels } = storeToRefs(channelStore);
 const { switchChannel } = channelStore;
+
+const callStore = useCallStore();
+const { isCalling } = storeToRefs(callStore);
 
 const isDropdownOpen = ref(false);
 

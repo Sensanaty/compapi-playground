@@ -14,6 +14,25 @@ const useCallStore = defineStore("call", () => {
   const calleeNumber = ref("");
   const isCalling = ref(false);
 
+  function initiateCall(number?: string) {
+    if (isCalling.value) return;
+
+    if (!number && !calleeNumber.value) {
+      console.error("Please enter a valid number first");
+      return;
+    }
+
+    if (number) {
+      console.log(`Calling ${number}`);
+    } else {
+      console.log(`Calling ${calleeNumber.value}`);
+    }
+
+    isCalling.value = true;
+  }
+
+  const endCall = () => (isCalling.value = false);
+
   return {
     // State - VoipPanel
     activeVoipTab,
@@ -25,6 +44,10 @@ const useCallStore = defineStore("call", () => {
 
     // Methods - VoipPanel
     switchVoipTab,
+
+    // Methods - Calling
+    initiateCall,
+    endCall,
   };
 });
 

@@ -15,7 +15,7 @@
     </div>
 
     <span
-      v-if="!isCalling"
+      v-if="isCalling"
       class="blinker m-auto h-0 w-0 cursor-pointer rounded-full bg-emerald-300 p-1.5 focus:outline-none"
       @click.prevent="switchVoipTab('dial')"
     />
