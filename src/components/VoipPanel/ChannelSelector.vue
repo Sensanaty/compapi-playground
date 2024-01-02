@@ -1,6 +1,6 @@
 <template>
   <button
-    class="flex w-full truncate bg-emerald-500 px-4 py-1 font-bold text-black transition-colors hover:bg-emerald-600 active:bg-emerald-500"
+    class="flex w-full items-center truncate bg-emerald-500 px-4 py-1 font-bold text-black transition-colors hover:bg-emerald-600 active:bg-emerald-500"
     :class="{ '!bg-emerald-700': isDropdownOpen }"
     @click.prevent="isDropdownOpen = !isDropdownOpen"
   >
