@@ -1,16 +1,19 @@
 <template>
   <div class="flex flex-col">
     <VoipPanel v-if="isVoipPanelOpen" />
+
     <button
-      class="mx-auto mt-4 w-fit rounded-md bg-emerald-700 px-2 py-3 font-bold leading-5 text-black"
+      v-if="!isVoipPanelOpen"
+      class="absolute left-4 top-1/2 w-auto rounded-full bg-emerald-700 p-3 font-bold leading-5 text-white transition-all hover:bg-emerald-600"
       @click.prevent="isVoipPanelOpen = !isVoipPanelOpen"
     >
-      {{ isVoipPanelOpen ? "Close" : "Open" }} Panel
+      <PhPhone weight="fill" size="2rem" />
     </button>
   </div>
 </template>
 
 <script setup lang="ts">
+import { PhPhone } from "@phosphor-icons/vue";
 import { defineAsyncComponent } from "vue";
 import useCallStore from "~/store/useCallStore";
 import { storeToRefs } from "pinia";

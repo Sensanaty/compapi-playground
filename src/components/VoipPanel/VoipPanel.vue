@@ -1,6 +1,6 @@
 <template>
   <div
-    class="absolute left-8 top-1/4 flex h-[550px] w-[350px] flex-col rounded-md border border-gray-500/50 bg-stone-950 shadow shadow-black"
+    class="absolute left-8 top-1/4 z-10 flex h-[550px] w-[350px] flex-col rounded-md border border-gray-500/50 bg-stone-950 shadow shadow-black"
   >
     <TabSwitcher />
 
