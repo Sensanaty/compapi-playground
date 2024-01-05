@@ -8,10 +8,6 @@
       <button :class="{ '!bg-gray-300': activeVoipTab === 'history' }" @click.prevent="switchVoipTab('history')">
         <PhClockCounterClockwise size="1.25rem" />
       </button>
-
-      <button :class="{ '!bg-gray-300': activeVoipTab === 'settings' }" @click.prevent="switchVoipTab('settings')">
-        <PhGear size="1.25rem" />
-      </button>
     </div>
 
     <span
@@ -23,7 +19,7 @@
 </template>
 
 <script setup lang="ts">
-import { PhHash, PhClockCounterClockwise, PhGear } from "@phosphor-icons/vue";
+import { PhHash, PhClockCounterClockwise } from "@phosphor-icons/vue";
 import useCallStore from "~/store/useCallStore";
 import { storeToRefs } from "pinia";
 

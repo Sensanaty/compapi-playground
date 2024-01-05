@@ -1,7 +1,7 @@
 import { defineStore } from "pinia";
 import { computed, ref } from "vue";
 
-export type VoipTab = "dial" | "history" | "settings" | "";
+export type VoipTab = "dial" | "history" | "";
 
 export type HistoryEntry = {
   id: number;
